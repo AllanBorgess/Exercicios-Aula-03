@@ -1,42 +1,44 @@
 //******Não consegui fazer**********/
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exercicio8 {
 	public static void main(String[] args) {
 
 		Scanner leitorDeVariaveis = new Scanner(System.in);
-		
-		int numero1;
-		int numero2;
-		int numero3;
-		int numero4;
-		int numero5;
-		
-		System.out.println("informe o 1º numero");
-		numero1 = leitorDeVariaveis.nextInt();
-		System.out.println("informe o 2º numero");
-		numero2 = leitorDeVariaveis.nextInt();
-		System.out.println("informe o 3º numero");
-		numero3 = leitorDeVariaveis.nextInt();
-		System.out.println("informe o 4º numero");
-		numero4 = leitorDeVariaveis.nextInt();
-		System.out.println("informe o 5º numero");
-		numero5 = leitorDeVariaveis.nextInt();
-		
-		System.out.println("LISTA-A => " +numero1+" "+numero2+" "+numero3+" "+numero4+" "+numero5);
-		
-	    if(numero1>numero2) {
-	    	if(numero1>numero3) {
-	    		if(numero1>numero4){
-	    			if(numero1>numero5){
-	    				System.out.println("o maior é o " + numero1);
-	    			
-	    				
-	    			}
-	    		}
-	    	}
-	    
-        }
-	
+
+		List<Integer> listaNumeros = new ArrayList<>();
+
+//		for (int i = 1; i <= 5; i++) {
+//			System.out.println("informe o " + i + "º numero");
+//			listaNumeros.add(leitorDeVariaveis.nextInt());
+//		}
+		listaNumeros.add(20);
+		listaNumeros.add(10);
+		listaNumeros.add(15);
+		listaNumeros.add(1);
+		listaNumeros.add(30);
+
+
+		List<Integer> listaOrdenada = new ArrayList<>();
+		for (int numero : listaNumeros) {
+
+			int indice = listaOrdenada.size();
+
+			for (int i = 0; i < listaOrdenada.size(); i++) {
+				if (listaOrdenada.get(i) >= numero) {
+					indice = i;
+					break;
+				}
+			}
+			listaOrdenada.add(indice, numero);
+		}
+
+		System.out.println("Lista ordenada: ");
+		for (int numeroOrdenado : listaOrdenada) {
+			System.out.println(numeroOrdenado);
+		}
+
 	}
 }

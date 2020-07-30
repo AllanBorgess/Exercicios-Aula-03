@@ -5,22 +5,24 @@ public class Exercicio6 {
 
 		Scanner leitorDeVariaveis = new Scanner(System.in);
 
-		Integer primeiro;
-		Integer terceiro;
-		Integer segundo;
-		Integer total;
+		Integer primeiro = 1;
+		Integer segundo = 1;
+		Integer total = primeiro + segundo;
 
-		System.out.println("Informe um numero");
-		primeiro = leitorDeVariaveis.nextInt();
-		terceiro = leitorDeVariaveis.nextInt();
-		System.out.println("Informe outro numero");
-		segundo = leitorDeVariaveis.nextInt();
+		System.out.print("Informe o número máximo: ");
+		Integer maximo = leitorDeVariaveis.nextInt();
 
-		System.out.println(primeiro);
-		for (int c = 0; c <= segundo; c++) {
+		System.out.println("Realizando calculo fibonacci.: ");
 
-			total = primeiro;
+		System.out.print("0, " + primeiro + ", " + segundo);
 
+		while (total < maximo) {
+
+			total = primeiro + segundo;
+			System.out.print(", " + total);
+
+			primeiro = segundo;
+			segundo = total;
 		}
 	}
 }
